@@ -63,15 +63,17 @@ class MyAppState extends State<MyApp> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(20),
-                                child: Image.network(
-                                  'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-                                  height: 150,
+                                child: Image.asset(
+                                  'images/mobil1.png',
+                                  width: 100,
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(20),
                                 child: ElevatedButton(
                                     onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.grey),
                                     child: const Text('Detail')),
                               )
                             ],
@@ -80,18 +82,28 @@ class MyAppState extends State<MyApp> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(20),
-                                child: DropdownButton(
-                                    value: pilihanMobil,
-                                    items: listMobil,
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        if (newValue != null) {
-                                          pilihanMobil = newValue;
-                                        }
-                                      });
-                                    }),
-                              ),
+                                  padding: const EdgeInsets.all(20),
+                                  child: Row(
+                                    children: [
+                                      DropdownButton(
+                                          value: pilihanMobil,
+                                          items: listMobil,
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              if (newValue != null) {
+                                                pilihanMobil = newValue;
+                                              }
+                                            });
+                                          }),
+                                      IconButton(
+                                          onPressed: () {},
+                                          color: Colors.red,
+                                          icon: const Icon(
+                                            Icons.add,
+                                            color: Colors.white,
+                                          )),
+                                    ],
+                                  )),
                               Padding(
                                 padding: const EdgeInsets.all(20),
                                 child: Text(
@@ -113,11 +125,113 @@ class MyAppState extends State<MyApp> {
                                 child: Text('Nomor Mesin: XXXXXXXX',
                                     textAlign: TextAlign.start),
                               ),
+                              const Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Text('Garansi Berlaku: XXXXXXXX',
+                                    textAlign: TextAlign.start),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Text('Free Service',
+                                    style: TextStyle(color: Colors.red),
+                                    textAlign: TextAlign.start),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            primary: Colors.grey),
+                                        onPressed: () {},
+                                        child: const Text(
+                                          '1',
+                                          style: TextStyle(color: Colors.red),
+                                        )),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            primary: Colors.grey),
+                                        onPressed: () {},
+                                        child: const Text('2',
+                                            style:
+                                                TextStyle(color: Colors.red))),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            primary: Colors.red),
+                                        onPressed: () {},
+                                        child: const Text('3')),
+                                  )
+                                ],
+                              )
                             ],
-                          )
+                          ),
                         ],
                       ),
                     )),
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 2)),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Text(
+                                'Product Update : 0',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Text(
+                                'Extra Care : ',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Text(
+                                'STNK : 28-07-2021',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 2)),
+                      child: Row(
+                        children: [
+                          Text('Product Update : 0'),
+                          Text('Edit Care'),
+                          Text('STNK: 28-07-2021')
+                        ],
+                      ),
+                    ),
                     Container(
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey, width: 2)),
