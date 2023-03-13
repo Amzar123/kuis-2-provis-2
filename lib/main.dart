@@ -289,8 +289,9 @@ class ButtonNamaKelompok extends StatelessWidget {
         showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(
-            title: const Text('Nama Kelompok'),
-            content: const Text('Nama (email) ; Nama (email)'),
+            title: const Text('Kelompok 6'),
+            content: const Text(
+                'Hanifah Al Humaira (hanifah200201@upi.edu) ; Aji Muhammad Zapar (aji.muhammad@upi.edu)'),
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.pop(context, 'OK'),
@@ -315,7 +316,8 @@ class ButtonPerjanjian extends StatelessWidget {
         // icon setting ditap
         const snackBar = SnackBar(
           duration: Duration(seconds: 20),
-          content: Text('Kami berjanji  ...'),
+          content: Text(
+              'Kami berjanji  tidak akan berbuat curang dan atau membantu kelompok lain berbuat curang'),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },
